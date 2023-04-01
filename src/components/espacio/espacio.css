@@ -1,0 +1,164 @@
+.body{
+  background-color: #5eab63;
+  width: 100%;
+}
+.movie-container {
+  margin: 20px 0;
+}
+
+.movie-container select {
+  background-color: #fff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: 10px;
+  padding: 5px 15px 5px 15px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.container {
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.seat {
+
+  background-color: #4c4c4c;
+  height: 50px;
+  width: 100px;
+  margin: 10px;
+}
+
+.seat.selected {
+  background-color: #5eab63;
+}
+
+.seat.occupied {
+
+  background-color: #e92222;
+  cursor: default;
+}
+
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.showcase {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #777;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.showcase li small {
+  margin-left: 10px;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.screen {
+  background-color: #fff;
+  height: 70px;
+  width: 100%;
+  margin: 15px 0;
+  transform: rotateX(-45deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.75);
+}
+
+p.text {
+  margin: 5px 0;
+}
+
+p.text span {
+  color: #6feaf6;
+}
+
+
+
+/*.grid-container {
+  margin-left: 200px;
+  margin-bottom: 80px;
+  display: grid;
+  grid-template-columns: repeat(12, auto);
+  /*auto enves de 1fr probar
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+  text-align: center;
+}*/
+
+
+
+.grid-container {
+  margin-left: 150px;
+  margin-right: 200px;
+  display: grid;
+  grid-template-columns: repeat(13, auto);
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(192, 191, 191, 0.8);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 20px;
+  cursor: pointer;
+  height: 15px;
+  width: 50px;
+  
+}
+/*.grid-container > h1 {
+  background-color: rgba(192, 191, 191, 0.8);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 20px;
+  cursor: pointer;
+  height: 20px;
+  width: 70px;
+  
+}*/
+
+
+.grid-item {
+  background-color: rgb(94, 133, 94);
+
+  text-align: center;
+  height: 10px;
+  width: 10px;
+}
+
+.contenedor {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100px;
+  margin-left: 150px;
+  font-size: 20px;
+}
