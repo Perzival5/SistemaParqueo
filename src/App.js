@@ -1,169 +1,24 @@
-import logo from './assets/Verde.png';
+import React from 'react';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Sidebar from './components/navegacion/sidebar.js';
+import Panel from './components/panelprincipal/panel.js';
+import Espacios from './components/espacio/espacio.js';
+import Reservar from './components/reservar/reservar.js';
 
-function App() {
-  /*  
-  const items = llamada ala base;
-  */
+
+const App = () => {
   return (
-    <div className="App">
-      
-      <body><ul class="showcase">
-      <li>
-        <div class="seat"></div>
-        <small>N/A</small>
-      </li>
-
-      <li>
-        <div class="seat selected"></div>
-        <small>Selecionado</small>
-      </li>
-
-      <li>
-        <div class="seat occupied"></div>
-        <small>Ocupado</small>
-      </li>
-    </ul>
-    
-    <div className='grid-container'>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      <div className='image'><img src = {logo}/><div>a</div></div>
-      
-        
-    </div>
-    
-    
-</body>
-    </div>
-    
+    <BrowserRouter>
+      <Sidebar>
+        <Routes>
+          <Route path="/" element={<Panel />} />
+          <Route path="/espacios" element={<Espacios />} />
+          <Route path="/reservar" element={<Reservar />} />
+        </Routes>
+      </Sidebar>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
-<script src="script.js"></script>
-/*
-  {items.map((itme)=>(
-    <div key = {item.id} className='grid-item'>
-    <img src = {"https://image.tmdb.org/t/p/w150" + item.path;}/>
-    {item.lugar}
-    </div>
-  ))}
-  */
