@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import {
-    FaUserAlt,
-    FaRegChartBar,
+    FaTaxi,
+    FaGripHorizontal,
 }from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
@@ -11,18 +11,14 @@ const Sidebar = ({children}) => {
         {
             path:"/",
             name:"Panel Principal",
-            icon:<FaUserAlt/>
+            icon:<FaTaxi/>
         },
         {
             path:"/espacios",
             name:"Espacios",
-            icon:<FaRegChartBar/>
+            icon:<FaGripHorizontal/>
         },
-        {
-            path:"/reservar",
-            name:"Reservar",
-            icon:<FaRegChartBar/>
-        },
+        
     ]
     return (
         <div className="container">
