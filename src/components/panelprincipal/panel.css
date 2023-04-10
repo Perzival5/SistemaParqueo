@@ -1,0 +1,24 @@
+p {
+    color: rgb(0, 0, 0);
+    font-size: 32px;
+    font: Open Sans;
+    margin-left: 5%;
+    font-weight: bold;
+  }
+
+  table {
+    margin-top: 10%;
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #ccc;
+    font-weight: bold;
+    align-items: center;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
