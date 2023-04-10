@@ -18,6 +18,11 @@ const Sidebar = ({children}) => {
             name:"Espacios",
             icon:<FaGripHorizontal/>
         },
+        {
+            path:"/login",
+            name:"Iniciar Seccion",
+            icon:<FaGripHorizontal/>
+        },
         
     ]
     return (

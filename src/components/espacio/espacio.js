@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Calendar from 'react-calendar';
 import './espacio.css'
-
 
 function mostrarModal() {
   document.getElementById("miModal").style.display = "block";
@@ -11,11 +11,34 @@ function cerrarModal() {
 }
 
 const Espacios = () => {
+  const [value, onChange] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  const isFutureDate = (date) => {
+    const currentDate = new Date();
+    return date > currentDate;
+  };
+
+  const tileClassName = ({ date, view }) => {
+    if (view === 'month') {
+      if (isFutureDate(date)) {
+        return 'future-date';
+      } else if (date.toDateString() === new Date().toDateString()) {
+        return 'current-date';
+      }
+    }
+  };
+
+  const handleDateClick = (value) => {
+    if (isFutureDate(value) || value.toDateString() === new Date().toDateString()) {
+      setSelectedDate(value);
+    }
+  };
 
   const [espacios, setEspacios] = useState([]);
   const [selectedDivId, setSelectedDivId] = useState(null);
   const [selectedDivState, setSelectedDivState] = useState(null);
-
+  const [colorSeleccionado, setColorSeleccionado] = useState("");
   useEffect(() => {
     fetch("https://proyectoparqueo.000webhostapp.com/public/api/espacios")
       .then(response => response.json())
@@ -28,7 +51,6 @@ const Espacios = () => {
     setColorSeleccionado(event.target.value);
     console.log(id)
   }
-  const [colorSeleccionado, setColorSeleccionado] = useState("");
   const handleDivClick = (event) => {
     setSelectedDivId(event.target.id);
     setSelectedDivState(event.target.getAttribute('data-estado'));
@@ -59,6 +81,15 @@ const Espacios = () => {
         <p6>Estado: {selectedDivState}</p6><br /><br />
         <p6>Nuevo Estado:</p6> <br />
         <br />
+        <div>
+          <Calendar onChange={onChange} value={value} tileClassName={tileClassName} onClickDay={handleDateClick} />
+          {selectedDate && (
+            <div className="modal1">
+              <h2>Modal for {selectedDate.toLocaleDateString()}</h2>
+              <button onClick={() => setSelectedDate(null)}>Close</button>
+            </div>
+          )}
+        </div>
         <select className="select-dropdown" onChange={ManejarCambio}>seleccionar
           <option selected>Seleccionar</option>
           <option value="espacio libre" id="espaciolibre" >Espacio libre</option>
@@ -125,19 +156,19 @@ const Espacios = () => {
             id={espacio.id_espacio}
             data-estado={espacio.estado}
             style={{
-              
+
               backgroundColor:
                 espacio.estado === "libre"
                   ? "#D9D9D9"
                   : espacio.estado === "reservado"
-                  ? "#6083A9"
-                  : espacio.estado === "ocupado"
-                  ? "#EC1C24"
-                  : espacio.estado === "deshabilitado"
-                  ? "#000000"
-                  : espacio.estado === "solicitado"
-                  ? "#7becda"
-                  : "#D9D9D9"
+                    ? "#6083A9"
+                    : espacio.estado === "ocupado"
+                      ? "#EC1C24"
+                      : espacio.estado === "deshabilitado"
+                        ? "#000000"
+                        : espacio.estado === "solicitado"
+                          ? "#7becda"
+                          : "#D9D9D9"
             }}
           >
           </div>
