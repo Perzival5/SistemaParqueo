@@ -359,12 +359,12 @@ vertical-align:middle;
   display: none;
   position: fixed;
   z-index: 1;
-  left:45%;
-  top: 20%;
-  width: 20%;
-  height: 40%;
+  align-items: center;
+  align-content: center;
+  width: 50%;
+  height: auto;
   overflow: auto;
-  background-color: rgba(125, 184, 218, 0.7);
+  background-color: rgba(125, 184, 218, 0.9);
 }
 
 p6 {
@@ -430,4 +430,21 @@ p6 {
   font-size: 16px; 
   cursor: pointer; 
   font-weight: bold;
+}
+
+.future-date {
+  cursor: pointer;
+  background-color: #2794d3;
+}
+
+.modal1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
 }
