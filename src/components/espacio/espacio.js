@@ -82,9 +82,23 @@ const Espacios = () => {
 
   const handleDivClick = (event) => {
     const idEspacio = event.target.id;
-    setSelectedDivId(idEspacio);
-    mostrarModal();
-  };
+  setSelectedDivId(idEspacio);
+
+  axios.post('https://proyectoparqueo.000webhostapp.com/public/api/cambiar/espacio', {
+    id: idEspacio,
+    estado: 'reservado'
+  })
+  .then(response => {
+    console.log(response);
+    //setSelectedDivState('reservado');
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+  mostrarModal();
+  }
+
   const enviarDatos = (e) => {
     e.preventDefault();
     //aqui falta ruta para enviar los datos
@@ -100,46 +114,46 @@ const Espacios = () => {
           <Calendar onChange={onChange} value={value} tileClassName={tileClassName} onClickDay={handleDateClick} />
           {selectedDate && (
             <div className="modal1">
-              <h2>Reservas para: {selectedDate.toLocaleDateString()}</h2>
-              <button onClick={abrirModal2} >reservar</button>
+              <h2>Reservar para: {selectedDate.toLocaleDateString()}</h2>
+              <button onClick={abrirModal2} >Reservar</button>
               {Modal2 && (
                 <div className="modal2">
                   <button type="button" className="cerrar" onClick={cerrarModal2}>&times;</button>
                   <div>
                     <form className="formulario" onSubmit={enviarDatos}>
                       <h2>Reservar</h2>
-                      <label htmlFor="nombre">Nombre:</label>
-                      <input type="text" id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
+                      {/* <label htmlFor="nombre">Nombre:</label> */}
+                      <input type="text" id="nombre" placeholder="Nombres" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
 
-                      <label htmlFor="apellidos">Apellidos:</label>
-                      <input type="text" id="apellidos" value={apellidos} onChange={(e) => setApellidos(e.target.value)} required />
+                      {/* <label htmlFor="apellidos">Apellidos:</label> */}
+                      <input type="text" id="apellidos" placeholder="Apellidos" value={apellidos} onChange={(e) => setApellidos(e.target.value)} required />
 
-                      <label htmlFor="ci">CI:</label>
-                      <input type="text" id="ci" value={ci} onChange={(e) => setCI(e.target.value)} required />
+                      {/* <label htmlFor="ci">CI:</label> */}
+                      <input type="text" id="ci" placeholder="CI" value={ci} onChange={(e) => setCI(e.target.value)} required />
 
-                      <label htmlFor="rol">Rol:</label>
-                      <input type="text" id="rol" value={rol} onChange={(e) => setRol(e.target.value)} required />
+                      {/* <label htmlFor="rol">Rol:</label> */}
+                      <input type="text" id="rol" placeholder="Rol" value={rol} onChange={(e) => setRol(e.target.value)} required />
 
-                      <label htmlFor="celular">Celular:</label>
-                      <input type="text" id="celular" value={celular} onChange={(e) => setCelular(e.target.value)} required />
+                      {/* <label htmlFor="celular">Celular:</label> */}
+                      <input type="text" id="celular" placeholder="Celular" value={celular} onChange={(e) => setCelular(e.target.value)} required />
 
-                      <label htmlFor="correo">Correo:</label>
-                      <input type="email" id="correo" value={correo} onChange={(e) => setCorreo(e.target.value)} required />
+                      {/* <label htmlFor="correo">Correo:</label> */}
+                      <input type="email" id="correo" placeholder="Correo" value={correo} onChange={(e) => setCorreo(e.target.value)} required />
 
-                      <label htmlFor="placa">Placa:</label>
-                      <input type="text" id="placa" value={placa} onChange={(e) => setPlaca(e.target.value)} required />
+                      {/* <label htmlFor="placa">Placa:</label> */}
+                      <input type="text" id="placa" placeholder="Placa" value={placa} onChange={(e) => setPlaca(e.target.value)} required />
 
-                      <label htmlFor="marca">Marca:</label>
-                      <input type="text" id="marca" value={marca} onChange={(e) => setMarca(e.target.value)} required />
+                      {/* <label htmlFor="marca">Marca:</label> */}
+                      <input type="text" id="marca" placeholder="Marca" value={marca} onChange={(e) => setMarca(e.target.value)} required />
 
-                      <label htmlFor="modelo">Modelo:</label>
-                      <input type="text" id="modelo" value={modelo} onChange={(e) => setModelo(e.target.value)} required />
+                      {/* <label htmlFor="modelo">Modelo:</label> */}
+                      <input type="text" id="modelo" placeholder="Modelo" value={modelo} onChange={(e) => setModelo(e.target.value)} required />
 
-                      <label htmlFor="tipo">Tipo:</label>
-                      <select id="tipo" value={tipo} onChange={(e) => setTipo(e.target.value)} required>
+                      <label htmlFor="tipo">Tipo de auto:</label>
+                      <select className="Opciones" id="tipo" value={tipo} onChange={(e) => setTipo(e.target.value)} required>
                         <option value="">Seleccionar tipo...</option>
-                        <option value="Sedán">toyota</option>
-                        <option value="SUV">nissan</option>
+                        <option value="Sedán">Deportivo</option>
+                        <option value="SUV">Familiar</option>
                         <option value="Pickup">suzuki</option>
                         <option value="Deportivo">otro</option>
                       </select>
@@ -176,7 +190,7 @@ const Espacios = () => {
               <br />
 
 
-              <button onClick={() => setSelectedDate(null)}>Close</button>
+              <button onClick={() => setSelectedDate(null)}>Cerrar</button>
             </div>
           )}
         </div>

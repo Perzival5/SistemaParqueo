@@ -355,13 +355,21 @@ font-size: 15px;
 vertical-align:middle;
 }
 
+h2{
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
 .modal {
+  padding: 10px;
   display: none;
   position: fixed;
+  border-radius: 0.50rem;
   z-index: 1;
   align-items: center;
   align-content: center;
-  width: 50%;
+  width: 30%;
   height: auto;
   overflow: auto;
   background-color: rgba(125, 184, 218, 0.9);
@@ -387,7 +395,7 @@ p6 {
   padding: auto;
   font-size: 30px;
   font-weight: bold;
-  padding: 2px 5px; 
+  padding: 1px 7px; 
 }
 
 
@@ -444,7 +452,7 @@ p6 {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgb(65, 125, 160);
-  padding: 1rem;
+  padding: 1.5rem;
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
@@ -468,24 +476,44 @@ p6 {
   margin-top: 2rem;
 }
 
-label {
+/* label {
   font-weight: bold;
   margin-bottom: 0.5rem;
-}
+  margin-right: 100px;
+} */
 
 input {
   padding: 0.5rem;
   margin-bottom: 1rem;
+  width: 70%;
   border-radius: 0.25rem;
   border: 1px solid #ccc;
 }
 
+/* .Opciones {
+  background-color: #f5f5f5;
+  border: none;
+  font-size: 16px;
+  width: 74%;
+  height: 30px;
+}
+
+.Opciones:checked {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.Opciones:hover {
+  cursor: pointer;
+} */
+
 button {
   padding: 0.5rem 1rem;
-  background-color: #007bff;
+  margin-top: 10px;
+  background-color: #a8a5a5;
   color: white;
   border-radius: 0.25rem;
-  border: none;
+  border: #000 1px solid;
   cursor: pointer;
 }
 
