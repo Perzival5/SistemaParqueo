@@ -5,7 +5,7 @@ const Panel = () => {
     const [datos, setDatos] = useState([]);
     useEffect(() => {
         const obtenerDatos = async () => {
-          const resultado = await axios.get('https://proyectoparqueo.000webhostapp.com/public/api/estado');
+          const resultado = await axios.get('http://localhost/detalleEspacio/login.php');
           setDatos(resultado.data);
         };
         obtenerDatos();

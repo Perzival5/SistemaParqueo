@@ -1,0 +1,9 @@
+{
+  
+    "LOGIN_API_URL": "http://localhost/proyectoParqueo/login.php",
+    "REGISTRAR_API_URL" : "http://localhost/php-auth-api/register.php",
+    "BUSCAR_API_URL" : "",
+    "VERESPACIOS_API_URL" : "http://localhost/proyectoParqueo/verEspacios.php",
+    "ACTUALIZARESPACIO_API_URL" : "http://localhost/proyectoParqueo/actualizarEspacio.php",
+    "VER_USUARIOS": "http://localhost/proyectoParqueo/verUsuarios.php"
+}

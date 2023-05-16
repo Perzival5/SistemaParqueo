@@ -5,7 +5,10 @@ import 'react-datepicker/dist/react-datepicker.css';
 import 'react-datetime/css/react-datetime.css';
 import './espacio.css'
 import axios from 'axios';
+import configData from "../config/config.json";
 
+const URL_ESPACIO = configData.VERESPACIOS_API_URL;
+const URL_ACTUALIZAR = configData.ACTUALIZARESPACIO_API_URL;
 
 
 function mostrarModal() {
@@ -73,30 +76,33 @@ const Espacios = () => {
     }
   };
 
-  useEffect(() => {
-    fetch("https://proyectoparqueo.000webhostapp.com/public/api/espacios")
-      .then(response => response.json())
-      .then(data => setEspacios(data))
-      .catch(error => console.log(error));
-  }, []);
+ useEffect(() => {
+  fetch(URL_ESPACIO)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      setEspacios(data);
+    })
+    .catch(error => console.error(error));
+}, []);
 
   const handleDivClick = (event) => {
     const idEspacio = event.target.id;
-  setSelectedDivId(idEspacio);
+   setSelectedDivId(idEspacio);
+   axios.post(URL_ACTUALIZAR, {
+     estado: 'reservado',
+     id: idEspacio,
+   })
 
-  axios.post('https://proyectoparqueo.000webhostapp.com/public/api/cambiar/espacio', {
-    id: idEspacio,
-    estado: 'reservado'
-  })
-  .then(response => {
+   .then(response => {
     console.log(response);
     //setSelectedDivState('reservado');
-  })
-  .catch(error => {
+   })
+   .catch(error => {
     console.log(error);
-  });
-
-  mostrarModal();
+   });
+   console.log(idEspacio);
+   mostrarModal();
   }
 
   const enviarDatos = (e) => {
