@@ -2,9 +2,12 @@ import React from 'react';
 import { FaTaxi, FaGripHorizontal } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 
-//falta obtener el rol de usuario despues de iniciar sesion 
+
+//falta obtener el tipo de usuario despues de iniciar sesion 
 
 const Sidebar = ({ children, userRole }) => {
+  
+  
   const menuItems = [
     {
       path: '/',
@@ -16,11 +19,7 @@ const Sidebar = ({ children, userRole }) => {
       name: 'Espacios',
       icon: <FaGripHorizontal />,
     },
-    {
-      path: '/login',
-      name: 'Iniciar Sesión',
-      icon: <FaGripHorizontal />,
-    },
+    
     {
       path: '/acceso',
       name: 'Accesos',
@@ -63,22 +62,14 @@ const Sidebar = ({ children, userRole }) => {
     },
   ];
 
-          //rol 1 = administrador
-          //rol 2 = guardia 
-          //rol 3 = cliente 
-
   const filteredMenuItems = menuItems.filter((item) => {
-    userRole=2; //solo de prueba ctm
-    if (!userRole) {
-      return item.path === '/login';
-    } else if (userRole === 1) {
+   if (userRole === 1) {
       return true;
     } else if (userRole === 2) {
-      return item.path === '/' || item.path === '/espacios';
+      return item.path === '/' || item.path === '/espacios' ;
     } else if (userRole === 3) {
       return item.path === '/espacios';
     } else {
-      // Otros roles no tienen acceso a ninguna ruta
       return false;
     }
   });

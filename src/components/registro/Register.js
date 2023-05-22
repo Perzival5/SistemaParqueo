@@ -47,6 +47,7 @@ const Register = ({ children }) => {
         setIsValid(false)
         const datos = {
             "name": values.nombre,
+            "tipo": 3,
            // "apellido": values.apellido,
             "email": values.email,
             "password": values.password,

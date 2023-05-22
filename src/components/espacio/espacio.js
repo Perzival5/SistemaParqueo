@@ -77,7 +77,7 @@ const Espacios = () => {
   };
 
  useEffect(() => {
-  fetch(URL_ESPACIO)
+  fetch('http://localhost/proyectoParqueo/verEspacios.php')
     .then(response => response.json())
     .then(data => {
       console.log(data);

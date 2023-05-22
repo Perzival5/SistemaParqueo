@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { UserProvider } from './components/login/UserContext.js';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <UserProvider>
+  <React.StrictMode>
     <App />
-  </UserProvider>,
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

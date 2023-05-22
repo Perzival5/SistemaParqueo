@@ -5,7 +5,7 @@ const Panel = () => {
     const [datos, setDatos] = useState([]);
     useEffect(() => {
         const obtenerDatos = async () => {
-          const resultado = await axios.get('http://localhost/detalleEspacio/login.php');
+          const resultado = await axios.get('http://localhost/proyectoParqueo/detalleParqueo.php');
           setDatos(resultado.data);
         };
         obtenerDatos();
@@ -27,12 +27,12 @@ const Panel = () => {
                         <th>Espacios solicitados</th>
                     </tr>
                     <tr>
-                        <td>{datos.total_espacios}</td>
-                        <td>{datos.espacios_disponibles}</td>
-                        <td>{datos.espacios_ocupados}</td>
-                        <td>{datos.espacios_reservados}</td>
-                        <td>{datos.espacios_deshabilitados}</td>
-                        <td>{datos.espacios_solicitados}</td>
+                        <td>{datos.total}</td>
+                        <td>{datos.libre}</td>
+                        <td>{datos.ocupado}</td>
+                        <td>{datos.reservado}</td>
+                        <td>{datos.deshabilitado}</td>
+                        <td>{datos.solicitado}</td>
                     </tr>
                 </table>
             </div>
