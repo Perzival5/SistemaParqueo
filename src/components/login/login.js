@@ -12,7 +12,7 @@ const Login = ({ setUserRole }) => {
     };
 
     try {
-      const response = await fetch('https://proyectoparqueo.000webhostapp.com/login.php', {
+      const response = await fetch('http://localhost/proyectoParqueo/login.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
