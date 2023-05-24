@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 const Login = ({ setUserRole }) => {
   const [email, setEmail] = useState('');
@@ -33,6 +35,7 @@ const Login = ({ setUserRole }) => {
   };
 
   return (
+    <div> 
     <form onSubmit={handleLogin}>
       <input
         type="email"
@@ -48,6 +51,8 @@ const Login = ({ setUserRole }) => {
       />
       <button type="submit">Iniciar sesión</button>
     </form>
+    <Link to="/registro">Register</Link>
+    </div>
   );
 };
 
